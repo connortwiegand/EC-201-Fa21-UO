@@ -1,0 +1,381 @@
+\documentclass[10pt,xcolor={svgnames}]{beamer}
+
+%%%%% Colors
+\usetheme{Dresden}%\usetheme{Madrid}
+\colorlet{beamer@blendedblue}{green!55!black}
+%%%%%
+
+%%%%% Other 
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber
+}
+\usepackage{hyperref, url}
+
+\definecolor{pine_green}{HTML}{007935}
+\hypersetup{colorlinks,breaklinks,linkcolor=white,urlcolor=orange,citecolor=black}
+\renewcommand\thefootnote{\textcolor{pine_green}{\arabic{footnote}}}
+%%%%%
+
+%%%%% Greying out/invidible Slides
+\setbeamercovered{invisible}
+\setbeamercovered{%
+  again covered={\opaqueness<1->{15}}}
+  
+%%%%%
+
+
+
+
+
+
+
+%%%%% Footnotes and captions
+%\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\usepackage{comment}
+\usepackage{wasysym}
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamerfont{caption}{size=\tiny}
+%\setbeamerfont{normal text}{size=\small}
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+%%%%%
+
+
+
+%Information to be included in the title page:
+\title[Connor Wiegand]{Intro to Economic Analysis: Microeconomics}
+\subtitle{EC 201 - Day 1 Slides}
+\author[EC 201]{Connor Wiegand}
+\institute[]{Department of Economics - University of Oregon}
+\date{27 September 2021}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}
+\frametitle{Covid Protocols}
+\begin{itemize}
+    \item<1-> My name is Connor Wiegand, I am excited to be your 201 instructor this term
+    \item<2-> I take Covid very seriously, but I also want to think about Covid as little as I can while teaching, up to University policy
+    \item<3-> I also want each of you to be able to focus as much as you can on the material during lecture, up to university policy
+    \item<4-> With that being said, here is the policy on instructors wearing masks while teaching: 
+    
+    
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Covid Protocols 1\footnote{Via https://provost.uoregon.edu/resource-rubric}}
+\begin{itemize}
+\item<1-3> \textbf{Q: Will students be required to wear masks in class?}
+
+\item<1-3> A: Yes, the University has an indoor face covering requirement, including classroom spaces, for all individuals. The face covering requirement will continue to follow CDC and other public health authority sector guidance for higher education and will be based on public health indicators, including campus vaccination rates, campus case rates, community case rates, CDC transmission rates, and hospitalization data.
+
+\item<2->\textbf{ Q: Can an instructor teach in-person classes without a mask if they can maintain at least 6 feet of distance from the students?}
+
+\item<2-> A: Yes, a fully vaccinated instructor who is at least 6 feet away from an audience can remove their mask when all others in the room are masked. If the room cannot accommodate 6 feet distancing between an unmasked instructor and students, then the instructor must remain masked.
+
+\item<3-> So: Does anyone have any major problems with me teaching with my mask off?
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Canvas}
+\begin{itemize}
+    \item The course will be run through Canvas, and the homework through ---
+    \item I will make extensive use of Canvas announcements throughout the term, so go in and adjust your canvas notification settings (both for the app and for email) as you see fit
+    \begin{itemize}
+        \item Being as accommodating as I can, missing an announcement is not a valid excuse as you should be regularly checking or receiving announcements 
+    \end{itemize}
+    
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Syllabus}
+\begin{itemize}
+    \item The syllabus is on canvas, you can read it in detail on your own, but we'll also go through the important parts together
+    \item Any time you have a question for me, make sure to consult the syllabus first\footnote{It's a bad look in college to ask a question that is on the syllabus, and a good way to leave a bad impression with a professor\vspace{2mm}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other College Advice}
+\begin{itemize}
+    \item<1-> Develop the study habits that are right for you
+    \item<2-> Don't beat yourself up to bad
+    \item<3-> Try to push through the week 8 burn-out
+    \item<4-> Read, go to lecture + discussion section, take notes, and utilize office hours
+    \item<5-> Study with others
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Checklist}
+    \begin{itemize}[<+>]
+        \item Who I am
+        \item Canvas/homework/tests
+        \item Syllabus
+        \item Covid Protocol
+        \item Questions?
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Getting to know you}
+\begin{itemize}[<+>]
+    \item General Questions
+    \item How many of you have taken an economics class before?
+    \item What do you think about \textit{economists}?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What does economics mean?}
+\begin{itemize}[<+>]
+    \item What do you think?\vspace{23mm}
+    \item Wikipedia: \textit{``the social science that studies how people interact with value; in particular, the production, distribution, and consumption of goods and services"}
+    \item Google (Oxford): \textit{``the branch of knowledge concerned with the production, consumption, and transfer of wealth"}
+    \item<3-> Me: \textit{the study of scarcity}
+    \begin{itemize}
+        \item This is a very general definition, which allows for a lot of different studies to fall under economics, which is appropriate considering the wide variety of works that get published in economics journals
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Macro vs. Micro}
+\begin{itemize}[<+->]
+    \item \underline{Macroeconomics} studies aggregate data in the economy, and analyzes nation- or world-wide behaviors 
+    \begin{itemize}[<+->]
+        \item e.g. inflation, technological and population growth, employment, interest rates, etc. 
+    \end{itemize}
+    \item \underline{Microeconomics} studies individual markets as well as individual consumer and producer behavior
+    \begin{itemize}
+        \item The market for cell phones, how farmers react to subsidies, how consumers respond to taxes, etc. 
+    \end{itemize}
+    \item Everything else: Labor-, Urban-, Environmental-, Developmental-, Behavioral-, Game Theory, Industrial Organization, Time Series...
+    \begin{itemize}
+        \item Many things do not fit the ``micro vs. macro" framework
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What Kinds of Questions do Economists Ask?}
+    \begin{itemize}
+        \item<1-> Definition: A \underline{\textbf{positive}} statement is one which is descriptive, and makes a claim about how the world is. 
+        \item<2-> Definition: A \underline{\textbf{normative}} statement is one which is prescriptive, and makes a claim about how the world ought to be. 
+        \item<3-> Examples
+        \begin{itemize}
+            \item<4-> N: We should raise the minimum wage
+            \item<4-> P: Small, notable increases in the minimum wage do not have a considerable impact on prices
+            
+            \item<5-> \vspace{3mm}N: You shouldn't download TikTok, because it is too time consuming
+            \item<5-> P: Many of my friends who have downloaded TikTok, along with myself, report spending a lot of time on the app; since you are also my friend, the same may happen to you
+            
+            \item<6-> \vspace{3mm}? The sun exploded and we all died yesterday
+            \item<6-> ? Setting the tax rate to 100\% will induce no-one to work, so it would be bad policy to implement, and therefore we as economists recommend you not do that
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{What Kinds of Questions do Economists Ask? (cont.)}
+    \begin{itemize}[<+->]
+        \item As economists, we generally like to make \textit{positive} statements
+        \item Sometimes we recommend policy, it certainly happens amongst many professional economists, but we try to focus only on normative statements before this
+        \item The notion of these two concepts can be used for good or for bad
+        \begin{itemize}[<+->]
+            \item Sometimes economists use this to exempt themselves from being a part of public policy when they do not want to be, for instance by saying ``implementing [policy] will increase inflation but decrease unemployment"
+            \item Sometimes, you will see people (including economists)  state a selective sample of biased data, and not attach a normative statement, attempting to either wipe their hands of the results, or be tongue-in-cheek with the implications
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{A Parable}
+\begin{itemize}[<+->]
+    \item \href{http://www.mi.sanu.ac.rs/~kosta/O\%20strogosti\%20u\%20nauci.pdf}{On Exactitude in Science}
+    \item Moral of the story: think simple!
+    \item This class will be about building \underline{basics}
+    \item You \textit{won't} be able to answer every question under the sun
+    \item You \textit{will} learn a lot about economic reasoning, as well as gaining intuition for how to get started on answering complicated questions
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Building a basic model}
+    \begin{itemize}
+        \item Suppose there are two goods in the world: guns and butter
+        \item We can produce 10 lbs of butter or 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hol' Up}
+    \begin{itemize}[<+->]
+        \item Pause: how can this model be any good? There are only two goods, and probably the biggest ones aren't even guns and butter\footnote{Unless you are from a state that rhymes with Wecksas}
+        \item Remember the map-makers? 6-in to a mile is pretty inaccurate
+        \item A two-good economy is actually very useful, as it can be used to model
+        \begin{itemize}
+            \item Consumption vs Labor
+            \item Savings vs Food
+            \item Food vs Housing
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Back to Our Model}
+    \begin{itemize}[<+->]
+        \item So suppose there are two goods in our economy: guns and butter
+        \item Suppose that we have finite resources, some which are used to make both guns and butter (e.g. labor) 
+        \item Consider a table outlining some combinations of guns and butter that we can produce:
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c|c}
+                Guns & Butter  \\
+                \hline
+                60 & 0\\
+                50 & 18\\
+                40 & 28\\
+                30 & 35\\
+                20 & 42\\
+                10 & 47\\
+                0 & 50\\
+            \end{tabular}
+        \end{table}
+        \item Observations?
+    \end{itemize}
+\end{frame}
+
+\begin{comment}
+\begin{frame}{Observations}
+
+\end{frame}
+
+
+\begin{frame}{What if we tried to graph this?}
+\pause
+\vspace{62mm}
+\begin{itemize}
+    \item This is called a \textit{Production Possibilities Frontier}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{PPF}
+\begin{itemize}[<+->]
+    \item A \underline{\textbf{Production Possibilities Frontier}} is a graph that shows the various combinations of output that an economy can produce using it's resources and technology
+    \item An outcome \footnote{i.e., an example of such a combination of outputs} is said to be \textit{efficient} if it is \underline{on} the production possibilities frontier
+    \item An outcome is said to be \textit{inefficient} if it is inside the PPF
+    \item An outcome is said to be \textit{unattainable} if it is outside the PPF
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example}
+\begin{itemize}[<+->]
+    \item A \underline{\textbf{Production Possibilities Frontier}} is a graph that shows the various combinations of output that an economy can produce using it's resources and technology
+    \item An outcome \footnote{i.e., an example of such a combination of outputs} is said to be \textit{efficient} if it is \underline{on} the production possibilities frontier
+    \item An outcome is said to be \textit{inefficient} if it is inside the PPF
+    \item An outcome is said to be \textit{unattainable} if it is outside the PPF
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Regions of a PPF}
+\begin{itemize}[<+->]
+    \item A \underline{\textbf{Production Possibilities Frontier}} is a graph that shows the various combinations of output that an economy can produce using it's resources and technology
+    \item An outcome \footnote{i.e., an example of such a combination of outputs} is said to be \textit{efficient} if it is \underline{on} the production possibilities frontier
+    \item An outcome is said to be \textit{inefficient} if it is inside the PPF
+    \item An outcome is said to be \textit{unattainable} if it is outside the PPF
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Example}
+
+\end{frame}
+
+\begin{frame}{The Shape of a PPF}
+\begin{itemize}[<+->]
+    \item Consider the following production possibilities set\footnote{I will refer to a list of points on the PPF as a production possibilities set. I reality, a production possibilities set would just be \textit{all} the points on a PPF curve}:
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|c|ccccccccccc|}
+        \hline
+            \hspace{8mm} & 10&9&8&7&6&5&4&3&2&1&0 \\
+            \hline
+            \hspace{8mm} & 0&1&2&3&4&5&6&7&8&9&10\\
+            \hline
+        \end{tabular}
+    \end{table}
+    \item What would this PPF look like? What is an example fo goods that would fit this example?\vspace{30mm} 
+    
+    \item One idea is to think that we have macaroni and bread available, and it takes one slice of cheese to make mac \& cheese, and one slice of cheese to make a grilled cheese
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Shape of a PPF (cont.)}
+\begin{itemize}[<+->]
+    \item Given that thought experiment, how would you explain the earlier shape of a PPF? 
+    \begin{itemize}
+        \item Suppose you can use your land to grow grapes or hops. Grapes grow well on hills, and hops grow well on flat land. 
+        \item Growing only grapes, you can easily sacrifice a little flat land an grow a lot of hops on it
+        \item Likewise, growing only hops, you can sacrifice a little of your hills for a lot of grape production
+        \item However, once you are using your hills for grapes and your plains for hops, sacrificing each type of land for the other kind of output will not produce a large yield. 
+    \end{itemize}
+
+    \item That is, the slope of the PPF changes as you move along the graph: it gets steeper near the x-axis and flatter near the y-axis
+    \item It is reasonable to assume that a PPF is bowed outward from the origin (aka ``concave" to the origin"), as many goods are not 1-for-1 adaptable in order to produce the other good
+    \item We will explore this more next time by analyzing the slope of the PPF. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example}
+    
+\end{frame}
+
+\begin{frame}{The Shape of a PPF (cont.)}
+\begin{itemize}[<+->]
+    \item Question: Can a PPF be bowed inward ("convex" to the origin)?
+    \item It could, but this would mean that producing moderate amounts of both goods is actually harder than producing either
+    \begin{itemize}[<+->]
+        \item Corn mazes get more fun the bigger they are
+        \item Suppose corn gets hard (or not worth it) to grow as it gets sparser/more maze like. 
+        \item That is, full corn means no maze, and a full maze means no corn
+        \item You must give up a lot of corn just to get a decently fun maze started. But once you get going, you only have to add branches to make the maze more fun
+        \item As you use nearly all of your field, it is not worth your time (resources) to cultivate the corn growth
+    \end{itemize}
+    \vspace{25mm}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Shifting the PPF}
+\begin{itemize}[<+->]
+    \item So we generally think PPFs are linear, or bowed outward
+    \item Recall that the PPF is based on resources and technology. What happens if we are producing guns and butter, and suddenly a large group of workers come in?\vspace{25mm}
+    \item The PPF shifts out on both ends (we don't know by how much) since we can ow produce more butter \textit{and} more guns
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What Happens When We Lose a Bunch of Steel?}
+
+\end{frame}
+
+
+\begin{frame}{What if We Engineer Cows to Produce Twice as Much Milk?}
+
+\end{frame}
+
+
+\begin{frame}{Next Time}
+\begin{itemize}
+    \item The slope of the PPF: what does it mean?
+    \item Opportunity Cost
+    \item Trade
+\end{itemize}
+\end{frame}
+\end{comment}
+
+\end{document}
