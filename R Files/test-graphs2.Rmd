@@ -1,0 +1,98 @@
+---
+title: "Test Graphs 2"
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+  html_document:
+    df_print: paged
+    keep_md: yes
+    smart: yes
+    theme: cosmo
+    toc: yes
+    toc_depth: '3'
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+```
+
+```{r setup2, include=FALSE}
+tinytex:::install_prebuilt()
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(tidyverse, dplyr, ggplot2)
+#p_load(ggthemes, readxl, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, janitor, kableExtra)
+
+red_pink <- "#e64173"
+met_slate <- "#272822" # metropolis font color 
+purple <- "#9370DB"
+green <- "#007935"
+light_green <- "#7DBA97"
+orange <- "#FD5F00"
+turquoise <- "#44C1C4"
+red <- "#b92e34"
+
+theme_market <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 17),
+  axis.title.x = element_text(hjust = 1, size = 17),
+  axis.title.y = element_text(hjust = 1, angle = 0, size = 17),
+  # axis.text.x = element_text(size = 12),
+  # axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank()
+)
+```
+
+
+```{r cars, echo = FALSE, fig.height = 5, fig.width = 5}
+x <- 0:10
+floor <- 7
+demand <- function(x) 10 - x
+supply <- function(x) 1 + x
+q <- uniroot(function(x) demand(x) - supply(x), range(x))$root
+p <- supply(q)
+q_d <- uniroot(function(x) demand(x) - floor, range(x))$root
+q_s <- uniroot(function(x) floor - supply(x), range(x))$root
+mv_gap <- supply(q_d)
+w <- seq(0, q_d, 0.1)
+z <- seq(q_d, q, 0.1)
+ggplot(data.frame(x = c(0:10)), aes(x)) +
+  scale_x_continuous(limits = c(0, 10.5), expand = c(0, 0), breaks = seq(0, 10, 1)) +
+  scale_y_continuous(limits = c(0, 10.5), expand = c(0, 0), breaks = seq(0, 10, 1)) +
+  labs(x = "Q", y = "P") +
+  stat_function(aes(x), fun = supply, color = purple, size = 1) + # supply function
+  stat_function(aes(x), fun = demand, color = red_pink, size = 1) 
+
+# + # demand function
+#   annotate("text", label = expression(D), x = 9, y = 1.6, color = red_pink, family = "Fira Sans", size = 9) +
+#   annotate("text", label = expression(S), x = 9, y = 9.5, color = purple, family = "Fira Sans", size = 9) +
+#   geom_segment(aes(x = q, y = 0, xend = q, yend = p), linetype  = "dashed", color = met_slate, size = 1) + # Q*
+#   geom_segment(aes(x = 0, y = p, xend = q, yend = p), linetype  = "dashed", color = met_slate, size = 1) + # P*
+#   geom_point(aes(x = q, y = p), color = met_slate, size = 2) # equilibrium bundle
+
+```
+
+```{r cars2, echo = FALSE, fig.height = 5, fig.width = 5}
+x <- 0:10
+demand <- function(x) 10 - x
+supply <- function(x) 1 + x
+ggplot(data.frame(x = c(0:10)), aes(x)) +
+  scale_x_continuous(limits = c(0, 10.5), expand = c(0, 0), breaks = seq(0, 10, 1)) +
+  scale_y_continuous(limits = c(0, 10.5), expand = c(0, 0), breaks = seq(0, 10, 1)) +
+  labs(x = "Q", y = "P") +
+  stat_function(aes(x), fun = supply, size = 1) + # supply function
+  stat_function(aes(x), fun = demand, size = 1) 
+
+# + # demand function
+#   annotate("text", label = expression(D), x = 9, y = 1.6, color = red_pink, family = "Fira Sans", size = 9) +
+#   annotate("text", label = expression(S), x = 9, y = 9.5, color = purple, family = "Fira Sans", size = 9) +
+#   geom_segment(aes(x = q, y = 0, xend = q, yend = p), linetype  = "dashed", color = met_slate, size = 1) + # Q*
+#   geom_segment(aes(x = 0, y = p, xend = q, yend = p), linetype  = "dashed", color = met_slate, size = 1) + # P*
+#   geom_point(aes(x = q, y = p), color = met_slate, size = 2) # equilibrium bundle
+
+```
